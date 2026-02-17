@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LexiForge AI | Agent Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <div class="brand">
+          <img src="logo.svg" alt="LexiForge AI logo" class="brand-logo" />
+          <div>
+            <p class="brand-name">LexiForge AI</p>
+            <p class="brand-tag">Build practical AI agents for every business</p>
+          </div>
+        </div>
+        <button class="ghost-btn" data-open-login>Login</button>
+      </nav>
+
+      <section class="hero-content">
+        <div class="hero-copy">
+          <h1>Create production-ready AI agents for real company workflows</h1>
+          <p>
+            From legal research assistants to voice support agents and content writers,
+            LexiForge AI helps you configure, launch, and manage specialized agents in minutes.
+          </p>
+          <div class="cta-row">
+            <button class="primary-btn" data-open-login>Start Building</button>
+            <a href="#process" class="text-link">See the process</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Popular agent ideas</h2>
+          <ul>
+            <li>⚖️ Lawyer case-prep & legal brief assistant</li>
+            <li>🎙️ AI voice support agent for inbound calls</li>
+            <li>✍️ Blog and SEO content writer</li>
+            <li>🛍️ Sales copywriting and landing-page optimizer</li>
+            <li>📊 Internal operations and reporting copilot</li>
+          </ul>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="panel" id="process">
+        <h2>How LexiForge works</h2>
+        <div class="steps">
+          <article>
+            <span>1</span>
+            <h3>Login & workspace setup</h3>
+            <p>Sign in and choose your company workflow to get the right templates.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Select an agent process</h3>
+            <p>Choose legal, voice, content, support, or create your own process.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Configure core inputs</h3>
+            <p>Add system prompt, persona, description, and API keys.</p>
+          </article>
+          <article>
+            <span>4</span>
+            <h3>Launch and iterate</h3>
+            <p>Test your agent and update prompts as business needs evolve.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel hidden" id="login-panel">
+        <h2>Login to LexiForge AI</h2>
+        <form id="login-form" class="stacked-form">
+          <label>
+            Work email
+            <input type="email" name="email" required placeholder="you@company.com" />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" required placeholder="••••••••" />
+          </label>
+          <button type="submit" class="primary-btn">Continue to dashboard</button>
+        </form>
+      </section>
+
+      <section class="panel hidden" id="dashboard-panel">
+        <div class="dashboard-head">
+          <h2>Agent Builder Dashboard</h2>
+          <p>Set up a new business agent in one workflow.</p>
+        </div>
+
+        <form id="agent-form" class="stacked-form">
+          <label>
+            Select process
+            <select name="process" required>
+              <option value="">Choose a process</option>
+              <option>Legal assignment & research agent</option>
+              <option>AI voice agent for customer support</option>
+              <option>Blog content writer agent</option>
+              <option>Sales copywriting agent</option>
+              <option>Custom business workflow agent</option>
+            </select>
+          </label>
+
+          <label>
+            System prompt
+            <textarea
+              name="systemPrompt"
+              rows="5"
+              required
+              placeholder="Define hard rules, task boundaries, and behavior instructions"
+            ></textarea>
+          </label>
+
+          <label>
+            Agent persona
+            <input
+              type="text"
+              name="persona"
+              required
+              placeholder="e.g., Senior legal operations assistant"
+            />
+          </label>
+
+          <label>
+            Agent description
+            <textarea
+              name="description"
+              rows="4"
+              required
+              placeholder="Describe what the agent helps users achieve and key outputs"
+            ></textarea>
+          </label>
+
+          <div class="api-grid">
+            <label>
+              OpenAI API key
+              <input type="password" name="openaiKey" placeholder="sk-..." />
+            </label>
+            <label>
+              Voice provider API key
+              <input type="password" name="voiceKey" placeholder="Optional for voice agents" />
+            </label>
+            <label>
+              Vector DB API key
+              <input type="password" name="vectorKey" placeholder="Optional for knowledge search" />
+            </label>
+          </div>
+
+          <button type="submit" class="primary-btn">Create agent configuration</button>
+        </form>
+
+        <div id="success-message" class="success hidden" role="status"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
