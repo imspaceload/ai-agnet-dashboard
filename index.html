@@ -15,14 +15,14 @@
   <body>
     <header class="hero">
       <nav class="nav">
-        <div class="brand">
+        <a href="index.html" class="brand">
           <img src="logo.svg" alt="LexiForge AI logo" class="brand-logo" />
           <div>
             <p class="brand-name">LexiForge AI</p>
             <p class="brand-tag">Build practical AI agents for every business</p>
           </div>
-        </div>
-        <button class="ghost-btn" data-open-login>Login</button>
+        </a>
+        <a href="login.html" class="ghost-btn">Login</a>
       </nav>
 
       <section class="hero-content">
@@ -33,18 +33,18 @@
             LexiForge AI helps you configure, launch, and manage specialized agents in minutes.
           </p>
           <div class="cta-row">
-            <button class="primary-btn" data-open-login>Start Building</button>
+            <a href="login.html" class="primary-btn">Start Building</a>
             <a href="#process" class="text-link">See the process</a>
           </div>
         </div>
         <div class="hero-card">
           <h2>Popular agent ideas</h2>
           <ul>
-            <li>⚖️ Lawyer case-prep & legal brief assistant</li>
-            <li>🎙️ AI voice support agent for inbound calls</li>
-            <li>✍️ Blog and SEO content writer</li>
-            <li>🛍️ Sales copywriting and landing-page optimizer</li>
-            <li>📊 Internal operations and reporting copilot</li>
+            <li>Legal case-prep & brief assistant</li>
+            <li>AI voice support agent for inbound calls</li>
+            <li>Blog and SEO content writer</li>
+            <li>Sales copywriting and landing-page optimizer</li>
+            <li>Internal operations and reporting copilot</li>
           </ul>
         </div>
       </section>
@@ -77,92 +77,52 @@
         </div>
       </section>
 
-      <section class="panel hidden" id="login-panel">
-        <h2>Login to LexiForge AI</h2>
-        <form id="login-form" class="stacked-form">
-          <label>
-            Work email
-            <input type="email" name="email" required placeholder="you@company.com" />
-          </label>
-          <label>
-            Password
-            <input type="password" name="password" required placeholder="••••••••" />
-          </label>
-          <button type="submit" class="primary-btn">Continue to dashboard</button>
-        </form>
-      </section>
-
-      <section class="panel hidden" id="dashboard-panel">
-        <div class="dashboard-head">
-          <h2>Agent Builder Dashboard</h2>
-          <p>Set up a new business agent in one workflow.</p>
-        </div>
-
-        <form id="agent-form" class="stacked-form">
-          <label>
-            Select process
-            <select name="process" required>
-              <option value="">Choose a process</option>
-              <option>Legal assignment & research agent</option>
-              <option>AI voice agent for customer support</option>
-              <option>Blog content writer agent</option>
-              <option>Sales copywriting agent</option>
-              <option>Custom business workflow agent</option>
-            </select>
-          </label>
-
-          <label>
-            System prompt
-            <textarea
-              name="systemPrompt"
-              rows="5"
-              required
-              placeholder="Define hard rules, task boundaries, and behavior instructions"
-            ></textarea>
-          </label>
-
-          <label>
-            Agent persona
-            <input
-              type="text"
-              name="persona"
-              required
-              placeholder="e.g., Senior legal operations assistant"
-            />
-          </label>
-
-          <label>
-            Agent description
-            <textarea
-              name="description"
-              rows="4"
-              required
-              placeholder="Describe what the agent helps users achieve and key outputs"
-            ></textarea>
-          </label>
-
-          <div class="api-grid">
-            <label>
-              OpenAI API key
-              <input type="password" name="openaiKey" placeholder="sk-..." />
-            </label>
-            <label>
-              Voice provider API key
-              <input type="password" name="voiceKey" placeholder="Optional for voice agents" />
-            </label>
-            <label>
-              Vector DB API key
-              <input type="password" name="vectorKey" placeholder="Optional for knowledge search" />
-            </label>
+      <section class="panel" id="pricing">
+        <h2>Simple pricing</h2>
+        <div class="pricing-grid">
+          <div class="price-card">
+            <h3>Starter</h3>
+            <p class="price">Free</p>
+            <ul>
+              <li>1 agent</li>
+              <li>100 runs / month</li>
+              <li>Community support</li>
+            </ul>
+            <a href="login.html" class="ghost-btn">Get started</a>
           </div>
-
-          <button type="submit" class="primary-btn">Create agent configuration</button>
-        </form>
-
-        <div id="success-message" class="success hidden" role="status"></div>
+          <div class="price-card featured">
+            <h3>Pro</h3>
+            <p class="price">$49<span>/mo</span></p>
+            <ul>
+              <li>10 agents</li>
+              <li>Unlimited runs</li>
+              <li>Priority support</li>
+              <li>Custom integrations</li>
+            </ul>
+            <a href="login.html" class="primary-btn">Start free trial</a>
+          </div>
+          <div class="price-card">
+            <h3>Enterprise</h3>
+            <p class="price">Custom</p>
+            <ul>
+              <li>Unlimited agents</li>
+              <li>SSO & audit logs</li>
+              <li>Dedicated account manager</li>
+            </ul>
+            <a href="login.html" class="ghost-btn">Contact sales</a>
+          </div>
+        </div>
       </section>
     </main>
 
-    <script src="app.js"></script>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="brand">
+          <img src="logo.svg" alt="LexiForge AI logo" class="brand-logo" />
+          <p class="brand-name">LexiForge AI</p>
+        </div>
+        <p class="footer-text">&copy; 2026 LexiForge AI. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

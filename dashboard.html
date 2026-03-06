@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | LexiForge AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="nav nav-dashboard">
+      <a href="index.html" class="brand">
+        <img src="logo.svg" alt="LexiForge AI logo" class="brand-logo" />
+        <div>
+          <p class="brand-name">LexiForge AI</p>
+          <p class="brand-tag">Agent Builder Dashboard</p>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <span class="user-badge" id="user-email">user@company.com</span>
+        <a href="login.html" class="ghost-btn ghost-sm" id="logout-btn">Logout</a>
+      </div>
+    </nav>
+
+    <main class="dashboard-main">
+      <div class="dashboard-head">
+        <h1>Agent Builder</h1>
+        <p>Set up a new business agent in one workflow.</p>
+      </div>
+
+      <section class="panel">
+        <form id="agent-form" class="stacked-form">
+          <label>
+            Select process
+            <select name="process" required>
+              <option value="">Choose a process</option>
+              <option>Legal assignment & research agent</option>
+              <option>AI voice agent for customer support</option>
+              <option>Blog content writer agent</option>
+              <option>Sales copywriting agent</option>
+              <option>Custom business workflow agent</option>
+            </select>
+          </label>
+
+          <label>
+            System prompt
+            <textarea
+              name="systemPrompt"
+              rows="5"
+              required
+              placeholder="Define hard rules, task boundaries, and behavior instructions"
+            ></textarea>
+          </label>
+
+          <label>
+            Agent persona
+            <input
+              type="text"
+              name="persona"
+              required
+              placeholder="e.g., Senior legal operations assistant"
+            />
+          </label>
+
+          <label>
+            Agent description
+            <textarea
+              name="description"
+              rows="4"
+              required
+              placeholder="Describe what the agent helps users achieve and key outputs"
+            ></textarea>
+          </label>
+
+          <div class="api-grid">
+            <label>
+              OpenAI API key
+              <input type="password" name="openaiKey" placeholder="sk-..." />
+            </label>
+            <label>
+              Voice provider API key
+              <input type="password" name="voiceKey" placeholder="Optional for voice agents" />
+            </label>
+            <label>
+              Vector DB API key
+              <input type="password" name="vectorKey" placeholder="Optional for knowledge search" />
+            </label>
+          </div>
+
+          <button type="submit" class="primary-btn">Create agent configuration</button>
+        </form>
+      </section>
+
+      <div id="success-message" class="success hidden" role="status"></div>
+
+      <section class="panel" id="agents-list">
+        <h2>Your agents</h2>
+        <div class="agents-empty" id="agents-empty">
+          <p>No agents created yet. Use the form above to create your first agent.</p>
+        </div>
+        <div class="agents-grid" id="agents-grid"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
